@@ -21,5 +21,5 @@ typedef struct Event{
     char* comment;
 }Event;
 
-Event createevent(Date date, Time start, Time ends, char* name, char* location, char* comment);
+Event createevent(Date date, Time start, Time ends, char const* name, char const* location, char const* comment);
 #endif // CALENDAR_H_INCLUDED

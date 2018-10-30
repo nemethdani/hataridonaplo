@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-Event createevent(Date date, Time start, Time ends, char* name, char* location, char* comment){
+Event createevent(Date date, Time start, Time ends, char const* name, char const* location, char const* comment){
     Event event;
     event.date=date;
     event.start=start;
