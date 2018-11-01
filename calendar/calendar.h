@@ -25,7 +25,7 @@ typedef struct Event{
 }Event;
 
 typedef struct EventListElement{
-    Event* event;
+    Event *event;
     struct EventListElement *prev, *next;
 }EventListElement;
 

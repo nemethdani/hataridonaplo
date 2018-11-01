@@ -21,7 +21,7 @@ int main()
     //printevent(eventlist->first->next->next->event);
     //printevent(eventlist->last->prev->event);
 
-    printEventList(&eventlist);
+    printEventList(eventlist);
 
     //printf("%d",(eventlist->first->next->event==NULL));
     return 0;

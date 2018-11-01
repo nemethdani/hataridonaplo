@@ -52,7 +52,7 @@ void printevent(Event* event){
 }
 
 EventList* initEventList(void){
-    EventList* eventlist=(EventList*) malloc(sizeof(EventList*));
+    EventList* eventlist=(EventList*) malloc(sizeof(EventList));
     EventListElement* sentinel1=(EventListElement*) malloc(sizeof(EventListElement));
     EventListElement* sentinel2=(EventListElement*) malloc(sizeof(EventListElement));
     eventlist->first=sentinel1;
@@ -85,15 +85,12 @@ bool insertEventToListBackwards(EventList* eventlist,Event* event){
 
 bool printEventList(EventList* eventlist){
 
-    EventListElement *moving;
-    moving = eventlist->first->next;
-    while(moving != eventlist->last){
 
-
-        Event *e=moving->event;
-
-        printevent(e);
-        moving = moving->next;
+    EventListElement* moving;
+    moving=eventlist->first->next;
+    while(moving!=eventlist->last){
+        printevent(moving->event);
+        moving=moving->next;
     }
     return true;
 }
