@@ -38,6 +38,19 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     return event;
 }
 
+bool deleteEvent(EventList* eventlist, EventListElement* listelement){
+    if(eventlist==NULL || listelement==NULL || listelement->event==NULL) return false;
+    free(listelement->event->comment);
+    free(listelement->event->location);
+    free(listelement->event->name);
+    free(listelement->event);
+    listelement->prev->next=listelement->next;
+    listelement->next->prev=listelement->prev;
+    free(listelement);
+    return true;
+}
+
+
 void printevent(Event* event){
     printf("%d %d %d %d %d %d %d %s %s %s\n",
              event->start.tm_year+1900,

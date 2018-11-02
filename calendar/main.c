@@ -20,7 +20,7 @@ int main()
     //printevent(eventlist->first->next->event);
     //printevent(eventlist->first->next->next->event);
     //printevent(eventlist->last->prev->event);
-
+    if(deleteEvent(eventlist,eventlist->first->next)==false) printf("nem sikerult torolni");
     printEventList(eventlist);
 
     //printf("%d",(eventlist->first->next->event==NULL));
