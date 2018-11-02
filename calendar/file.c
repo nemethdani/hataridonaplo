@@ -35,3 +35,37 @@ bool calendarsave(EventList* eventlist){
     fclose(fp);
     return true;
 }
+
+
+bool calenderload(EventList* eventlist){
+    if(eventlist==NULL) return false;
+
+    FILE *fp; /* fájl mutató (file pointer/handle) */
+
+    fp = fopen("naptar.txt", "rt"); /* megnyitás */
+    if (fp == NULL) {
+       perror("Fájl megnyitása sikertelen");
+       return false;    /* nem folytathatjuk! */
+    }
+    Date date;
+    Time start, ends;
+    char name[128];
+    char loc[128];
+    char comm[256];
+
+    while(
+          fscanf(fp,"%d\t%d\t%d\t%d\t%d\t%d\t%d\t%[^\t]\t%[^\t]\t%[^\n]",
+                &date.year,&date.month,&date.day,
+                &start.hour,&start.minute,
+                &ends.hour,&ends.minute,
+                name,loc,comm)==10){
+        Event* event= createevent(date, start, ends, name, loc, comm);
+        if(event==NULL) return false;
+        if(insertEventToListBackwards(eventlist, event)==false) return false;
+
+    }
+
+
+    fclose(fp);
+    return true;
+}

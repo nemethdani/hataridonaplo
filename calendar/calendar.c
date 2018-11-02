@@ -24,6 +24,7 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     event->ends.tm_hour=ends.hour;
     event->ends.tm_min=ends.minute;
     char* newname=(char*) malloc((strlen(name)+1)*sizeof(char));
+
     if(newname ==NULL) newname=NULL;
     strcpy(newname,name);
     event->name=newname;
@@ -32,6 +33,7 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     strcpy(newloc,location);
     event->location=newloc;
     char* newcomment=(char*) malloc((strlen(comment)+1)*sizeof(char));
+
     if (newcomment==NULL) newcomment=NULL;
     strcpy(newcomment,comment);
     event->comment=newcomment;
