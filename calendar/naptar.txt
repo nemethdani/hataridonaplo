@@ -1,0 +1,2 @@
+2017	9	25	17	50	21	10	esemeny neve2	esemeny helye2	megjegyzes2
+2018	10	26	19	51	22	11	esemeny neve	esemeny helye	megjegyzes

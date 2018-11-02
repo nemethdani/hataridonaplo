@@ -20,10 +20,10 @@ int main()
     //printevent(eventlist->first->next->event);
     //printevent(eventlist->first->next->next->event);
     //printevent(eventlist->last->prev->event);
-    if(deleteEvent(eventlist,eventlist->first->next)==false) printf("nem sikerult torolni");
-    modifyEvent(eventlist,eventlist->first->next,date2,start2,end2,"modositott nev","modositott hely","modositott comment");
+    //if(deleteEvent(eventlist,eventlist->first->next)==false) printf("nem sikerult torolni");
+    //modifyEvent(eventlist,eventlist->first->next,date2,start2,end2,"modositott nev","modositott hely","modositott comment");
     printEventList(eventlist);
-
+    if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
     //printf("%d",(eventlist->first->next->event==NULL));
     return 0;
 }

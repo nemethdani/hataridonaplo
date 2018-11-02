@@ -15,8 +15,8 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     Event *event=(Event*) malloc(sizeof(Event));
     if(event==NULL) return NULL;
     //event.date=date;
-    event->start.tm_year=date.year-1900;
-    event->start.tm_mon=date.month-1;
+    event->start.tm_year=date.year;
+    event->start.tm_mon=date.month;
     event->start.tm_mday=date.day;
     event->start.tm_hour=start.hour;
     event->start.tm_min=start.minute;
@@ -62,8 +62,8 @@ bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, 
 
 void printevent(Event* event){
     printf("%d %d %d %d %d %d %d %s %s %s\n",
-             event->start.tm_year+1900,
-             event->start.tm_mon+1,
+             event->start.tm_year,
+             event->start.tm_mon,
              event->start.tm_mday,
              event->start.tm_hour,
              event->start.tm_min,
