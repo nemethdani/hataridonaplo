@@ -40,9 +40,9 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     return event;
 }
 
-bool deleteEvent(EventList* eventlist, EventListElement* listelement){
-    if(eventlist==NULL || listelement==NULL || listelement->event==NULL) return false;
-    if(freeEvent(eventlist, listelement)==false){
+bool deleteEvent(EventListElement* listelement){
+    if(listelement==NULL || listelement->event==NULL) return false;
+    if(freeEvent(listelement)==false){
             printf("nem sikerult az esemenyt felszabaditani");
             return false;
     }
@@ -56,7 +56,7 @@ bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, 
     Event* newevent=createevent(date, start, ends, name, location, comment);
     if(newevent==NULL) return false;
     if(insertEventToListBackwards(eventlist,newevent)==false) return false;
-    if(deleteEvent(eventlist,listelement)==NULL) return false;
+    if(deleteEvent(listelement)==NULL) return false;
     return true;
 
 
@@ -120,8 +120,8 @@ bool printEventList(EventList* eventlist){
     return true;
 }
 
-bool freeEvent(EventList* eventlist, EventListElement* listelement){
-    if(eventlist==NULL || listelement==NULL || listelement->event==NULL) return false;
+bool freeEvent(EventListElement* listelement){
+    if(listelement==NULL || listelement->event==NULL) return false;
     free(listelement->event->comment);
     free(listelement->event->location);
     free(listelement->event->name);
@@ -133,7 +133,7 @@ bool freeEventList(EventList* eventlist){
     EventListElement* list=eventlist->first;
     while(list){
         EventListElement* list_temp=list->next;
-        freeEvent(eventlist,list);
+        freeEvent(list);
         free(list);
         list=list_temp;
     }

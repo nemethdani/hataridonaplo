@@ -36,11 +36,11 @@ typedef struct EventList{
 
 int starttime(Event* event);
 Event* createevent(Date date, Time start, Time ends, char* name, char* location, char* comment);
-bool deleteEvent(EventList* eventlist, EventListElement* listelement);
+bool deleteEvent(EventListElement* listelement);
 bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, Time start, Time ends, char* name, char* location, char* comment );
 EventList* initEventList(void);
 bool insertEventToListBackwards(EventList* eventlist,Event* event);
 bool printEventList(EventList* eventlist);
-bool freeEvent(EventList* eventlist, EventListElement* listelement);
+bool freeEvent(EventListElement* listelement);
 bool freeEventList(EventList* eventlist);
 #endif // CALENDAR_H_INCLUDED
