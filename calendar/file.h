@@ -4,6 +4,6 @@
 #include "calendar.h"
 
 bool calendarsave(EventList* eventlist);
-bool calenderload(EventList* eventlist);
+bool calendarload(EventList* eventlist);
 
 #endif // FILE_H_INCLUDED

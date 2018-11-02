@@ -41,4 +41,6 @@ bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, 
 EventList* initEventList(void);
 bool insertEventToListBackwards(EventList* eventlist,Event* event);
 bool printEventList(EventList* eventlist);
+bool freeEvent(EventList* eventlist, EventListElement* listelement);
+bool freeEventList(EventList* eventlist);
 #endif // CALENDAR_H_INCLUDED

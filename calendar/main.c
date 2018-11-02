@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "calendar.h"
+#include "file.h"
 
 int main()
 {
@@ -15,7 +16,7 @@ int main()
 //    Event *event2=createevent(date2,start2,end2,"esemeny neve2","esemeny helye2","megjegyzes2");
     //printevent(event);
     EventList* eventlist=initEventList();
-    if(calenderload(eventlist)==false) printf("nem sikerult beolvasni");
+    if(calendarload(eventlist)==false) printf("nem sikerult beolvasni");
     //if(insertEventToListBackwards(eventlist,event)==false) printf("nem illesztette be");
     //if(insertEventToListBackwards(eventlist,event2)==false) printf("nem illesztette be");
     //printevent(eventlist->first->next->event);
@@ -26,7 +27,8 @@ int main()
     printEventList(eventlist);
 
     //printf("%d\n",strlen(eventlist->last->prev->event->location));
-    //if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
+    if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
     //printf("%d",(eventlist->first->next->event==NULL));
+    if(freeEventList(eventlist)==false) printf("nem sikerult felszabaditani a listat");
     return 0;
 }

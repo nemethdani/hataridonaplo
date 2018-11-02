@@ -1,14 +1,15 @@
 # depslib dependency file v1.0
-1541169033 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c
+1541171468 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c
 	<stdio.h>
 	<stdlib.h>
 	"calendar.h"
+	"file.h"
 
-1541154949 /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.h
+1541171216 /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.h
 	<stdbool.h>
 	<time.h>
 
-1541169014 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
+1541171196 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
 	"calendar.h"
 	<string.h>
 	<stdio.h>
@@ -16,13 +17,13 @@
 	<time.h>
 	<stdlib.h>
 
-1541168379 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.c
+1541171375 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.c
 	<stdio.h>
 	"file.h"
 	"calendar.h"
 	<time.h>
 
-1541167830 /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.h
+1541171386 /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.h
 	<stdbool.h>
 	"calendar.h"
 

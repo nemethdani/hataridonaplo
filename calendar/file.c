@@ -37,7 +37,7 @@ bool calendarsave(EventList* eventlist){
 }
 
 
-bool calenderload(EventList* eventlist){
+bool calendarload(EventList* eventlist){
     if(eventlist==NULL) return false;
 
     FILE *fp; /* fájl mutató (file pointer/handle) */
