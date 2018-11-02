@@ -11,29 +11,30 @@ int starttime(Event* event){
 
 }
 
-Event createevent(Date date, Time start, Time ends, char* name, char* location, char* comment){
-    Event event;
+Event* createevent(Date date, Time start, Time ends, char* name, char* location, char* comment){
+    Event *event=(Event*) malloc(sizeof(Event));
+    if(event==NULL) return NULL;
     //event.date=date;
-    event.start.tm_year=date.year-1900;
-    event.start.tm_mon=date.month-1;
-    event.start.tm_mday=date.day;
-    event.start.tm_hour=start.hour;
-    event.start.tm_min=start.minute;
-    event.ends=event.start;
-    event.ends.tm_hour=ends.hour;
-    event.ends.tm_min=ends.minute;
+    event->start.tm_year=date.year-1900;
+    event->start.tm_mon=date.month-1;
+    event->start.tm_mday=date.day;
+    event->start.tm_hour=start.hour;
+    event->start.tm_min=start.minute;
+    event->ends=event->start;
+    event->ends.tm_hour=ends.hour;
+    event->ends.tm_min=ends.minute;
     char* newname=(char*) malloc((strlen(name)+1)*sizeof(char));
     if(newname ==NULL) newname=NULL;
     strcpy(newname,name);
-    event.name=newname;
+    event->name=newname;
     char* newloc=(char*) malloc((strlen(location)+1)*sizeof(char));
     if(newloc==NULL) newloc=NULL;
     strcpy(newloc,location);
-    event.location=newloc;
+    event->location=newloc;
     char* newcomment=(char*) malloc((strlen(comment)+1)*sizeof(char));
     if (newcomment==NULL) newcomment=NULL;
     strcpy(newcomment,comment);
-    event.comment=newcomment;
+    event->comment=newcomment;
     return event;
 }
 
