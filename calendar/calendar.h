@@ -37,6 +37,7 @@ typedef struct EventList{
 int starttime(Event* event);
 Event* createevent(Date date, Time start, Time ends, char* name, char* location, char* comment);
 bool deleteEvent(EventList* eventlist, EventListElement* listelement);
+bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, Time start, Time ends, char* name, char* location, char* comment );
 EventList* initEventList(void);
 bool insertEventToListBackwards(EventList* eventlist,Event* event);
 bool printEventList(EventList* eventlist);

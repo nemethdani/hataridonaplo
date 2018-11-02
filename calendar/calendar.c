@@ -50,6 +50,15 @@ bool deleteEvent(EventList* eventlist, EventListElement* listelement){
     return true;
 }
 
+bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, Time start, Time ends, char* name, char* location, char* comment ){
+    Event* newevent=createevent(date, start, ends, name, location, comment);
+    if(newevent==NULL) return false;
+    if(insertEventToListBackwards(eventlist,newevent)==false) return false;
+    if(deleteEvent(eventlist,listelement)==NULL) return false;
+    return true;
+
+
+}
 
 void printevent(Event* event){
     printf("%d %d %d %d %d %d %d %s %s %s\n",
