@@ -30,7 +30,7 @@ int main()
     //if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
     //printf("%d",(eventlist->first->next->event==NULL));
 
-    mainmenu();
+    mainmenu(eventlist);
     if(freeEventList(eventlist)==false) printf("nem sikerult felszabaditani a listat");
     return 0;
 }
