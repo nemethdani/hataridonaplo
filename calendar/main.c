@@ -24,11 +24,13 @@ int main()
     //printevent(eventlist->last->prev->event);
     //if(deleteEvent(eventlist,eventlist->first->next)==false) printf("nem sikerult torolni");
     //modifyEvent(eventlist,eventlist->first->next,date2,start2,end2,"modositott nev","modositott hely","modositott comment");
-    printEventList(eventlist);
+    //printEventList(eventlist);
 
     //printf("%d\n",strlen(eventlist->last->prev->event->location));
-    if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
+    //if(calendarsave(eventlist)==false) printf("nem sikerult menteni");
     //printf("%d",(eventlist->first->next->event==NULL));
+
+    mainmenu();
     if(freeEventList(eventlist)==false) printf("nem sikerult felszabaditani a listat");
     return 0;
 }
