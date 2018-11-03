@@ -6,5 +6,6 @@ void create_console();
 void search_menu();
 void exit_console();
 void saving_console(EventList* eventlist);
+char scaninput();
 
 #endif // MENU_H_INCLUDED

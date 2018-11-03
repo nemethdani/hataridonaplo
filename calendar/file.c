@@ -13,7 +13,9 @@ bool calendarsave(EventList* eventlist){
        return false;    /* nem folytathatjuk! */
     }
     EventListElement* moving=eventlist->first->next;
-    if(moving==NULL || moving==eventlist->last) return false;
+    if(moving==NULL
+       || moving==eventlist->last)
+        return false;
     Event* me;
     while(moving!=eventlist->last){
         me=moving->event;

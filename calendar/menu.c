@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "calendar.h"
+#include <stdlib.h>
+
+char scaninput(){
+    char input;
+    scanf(" %c",&input);
+    input=tolower(input);
+    return input;
+}
 
 void mainmenu(EventList* eventlist){
     //enum mmenu{let,ker,men,ki};
@@ -28,7 +36,7 @@ void mainmenu(EventList* eventlist){
             break;
         case '4':
         case 'b':
-            exit_console();
+            exit_console(eventlist);
             break;
         default:
             printf("irj be mast!\n");
@@ -42,11 +50,9 @@ void create_console(){
 void search_menu(){
 
 }
-void exit_console(){
-    printf("tenyleg ki szeretnel elpni?\n");
-}
+
 void saving_console(EventList* eventlist){
-    printf("tenyleg el szeretned menteni?\n");
+    printf("\ntenyleg el szeretned menteni?\n");
     printf("(1) (M)entes\n");
     printf("(2) (V)issza\n");
     char input;
@@ -64,6 +70,32 @@ void saving_console(EventList* eventlist){
             //printf("uss be mast\n");
             mainmenu(eventlist);
             break;
+
+    }
+}
+
+void exit_console(EventList* eventlist){
+    printf("\n(1) Kilepes (m)entessel\n");
+    printf("(2) (K)ilepes mentes nelkul\n");
+    printf("(3) (V)issza\n");
+
+    switch(scaninput()){
+
+            case '1':
+            case 'm':
+                calendarsave(eventlist);
+                printf("mentettem\n");
+                if(freeEventList(eventlist)==false) printf("nem sikerult felszabaditani a listat");
+                else exit(0);
+                break;
+            case '2':
+            case 'k':
+                if(freeEventList(eventlist)==false) printf("nem sikerult felszabaditani a listat");
+                else exit(0);
+                break;
+            default:
+                mainmenu(eventlist);
+                break;
 
     }
 }
