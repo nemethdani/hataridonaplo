@@ -76,6 +76,16 @@ void printevent(Event* event){
              event->comment);
 }
 
+void printevent_short(Event* event){
+    printf("%d %d %d %d %s %s\n",
+             event->start.tm_mon,
+             event->start.tm_mday,
+             event->start.tm_hour,
+             event->start.tm_min,
+             event->name,
+             event->location);
+}
+
 EventList* initEventList(void){
     EventList* eventlist=(EventList*) malloc(sizeof(EventList));
     EventListElement* sentinel1=(EventListElement*) malloc(sizeof(EventListElement));

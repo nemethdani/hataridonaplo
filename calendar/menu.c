@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include "calendar.h"
 #include <stdlib.h>
+#include <string.h>
 
 char scaninput(){
     char input;
@@ -18,17 +19,15 @@ void mainmenu(EventList* eventlist){
     printf("(3) Modositasok (m)entese\n");
     printf("(4) (B)ezaras\n");
 
-    char input;
-    scanf(" %c",&input);
-    input=tolower(input);
-    switch(input){
+
+    switch(scaninput()){
         case '1':
         case 'l':
             create_console();
             break;
         case '2':
         case 'k':
-            search_menu();
+            search_menu(eventlist);
             break;
         case '3':
         case 'm':
@@ -47,18 +46,43 @@ void mainmenu(EventList* eventlist){
 void create_console(){
 
 }
-void search_menu(){
-
+void search_menu(EventList* eventlist){
+       printf("\nHogyan szeretnel keresni?\n");
+       printf("(1) (E)semeny neve szerint\n");
+       printf("(2) (N)ap szerint\n");
+       printf("(3) (H)et szerint\n");
+       printf("(4) H(o)nap szerint\n\n");
+       printf("(5) (V)issza a fomenube\n");
+    switch(scaninput()){
+    case '1':
+    case 'e':
+        searchbyname(eventlist);
+        break;
+    case '2':
+    case 'n':
+        //searchbyday();
+        break;
+    case '3':
+    case 'h':
+        //searchbyweek();
+        break;
+    case '4':
+    case 'o':
+        //searchbymonth();
+        break;
+    case '5':
+    case 'v':
+        mainmenu(eventlist);
+        break;
+    }
 }
 
 void saving_console(EventList* eventlist){
     printf("\ntenyleg el szeretned menteni?\n");
     printf("(1) (M)entes\n");
     printf("(2) (V)issza\n");
-    char input;
-    scanf(" %c",&input);
-    input=tolower(input);
-    switch (input){
+
+    switch (scaninput()){
         case '1':
         case 'm':
             calendarsave(eventlist);
@@ -98,4 +122,69 @@ void exit_console(EventList* eventlist){
                 break;
 
     }
+}
+
+void eventeditor(Event* editevent){
+    printf("this is the event editor\n");
+}
+
+void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
+    char command=scaninput();
+    if(command=='f' || command==(i+'0')) mainmenu(eventlist);
+    else if(command=='k' || command==(i-1+'0')) search_menu(eventlist);
+    else if(isalpha(command)){
+        printf("irj be mast\n");
+        scan_searchmenu_command(i,eventlist,findlist);
+    }
+    else{
+        int comm=command - '0';
+        if(comm>i) {
+            printf("irj be mast\n");
+            scan_searchmenu_command(i,eventlist,findlist);
+        }
+        else{
+            EventListElement* editelement=findlist->first->next;
+            int iter=1;
+            while(iter!=comm){
+                editelement=editelement->next;
+                iter++;
+            }
+            Event* editevent=editelement->event;
+            eventeditor(editevent);
+        }
+    }
+}
+
+void searchbyname(EventList* eventlist){
+    printf("\nIrj be legalabb 3 osszefuggo karaktert az esemeny nevebol!\n");
+    char search[128]={0};
+    while(strlen(&search)<3){
+            printf("legalabb 3 karaktert irjal\n");
+            scanf("%s",search);
+    }
+    EventListElement* moving=eventlist->first->next;
+    int i=1;
+    Event* e;
+    EventList* findlist=initEventList();
+    while(moving!=eventlist->last){
+
+        if(strstr(moving->event->name,&search)!=NULL){
+            e=moving->event;
+            printf("(%d) ",i);
+            printevent_short(e);
+            printf("\n");
+            //put event to new linkedlist
+            if(insertEventToListBackwards(findlist,e)==false) printf("nem illesztette be a talalati listaba\n");
+            ++i;
+
+        }
+        moving=moving->next;
+
+    }
+    //print extra menu
+    printf("(%d) (K)ereses menu\n",i);
+    i++;
+    printf("(%d) (F)omenu\n",i);
+    scan_searchmenu_command(i,eventlist,findlist);
+    return;
 }

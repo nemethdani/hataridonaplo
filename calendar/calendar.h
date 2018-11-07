@@ -43,4 +43,6 @@ bool insertEventToListBackwards(EventList* eventlist,Event* event);
 bool printEventList(EventList* eventlist);
 bool freeEvent(EventListElement* listelement);
 bool freeEventList(EventList* eventlist);
+void printevent_short(Event* event);
+void printevent(Event* event);
 #endif // CALENDAR_H_INCLUDED
