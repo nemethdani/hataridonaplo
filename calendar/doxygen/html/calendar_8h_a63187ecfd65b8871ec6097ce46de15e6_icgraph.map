@@ -1,0 +1,12 @@
+<map id="freeEvent" name="freeEvent">
+<area shape="rect" id="node2" href="$calendar_8c.html#a58188d36dfb58b441455d148b2fbf067" title="deleteEvent" alt="" coords="136,56,227,83"/>
+<area shape="rect" id="node4" href="$calendar_8c.html#aba6c6ae360552d015f30122415413895" title="freeEventList" alt="" coords="132,107,231,133"/>
+<area shape="rect" id="node3" href="$calendar_8c.html#a8a0e2c06c118cc0f8323d92c7b187f0c" title="modifyEvent" alt="" coords="279,56,373,83"/>
+<area shape="rect" id="node5" href="$menu_8c.html#abe001aeabe33855a75404555008626ca" title="exit_console" alt="" coords="279,107,373,133"/>
+<area shape="rect" id="node6" href="$menu_8c.html#a2acfd1808f80da28d18e7e124c8f0304" title="mainmenu" alt="" coords="421,107,504,133"/>
+<area shape="rect" id="node7" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="583,5,633,32"/>
+<area shape="rect" id="node8" href="$menu_8c.html#acbbd51f1530cbb95ffde2d3fbb001e5a" title="search_menu" alt="" coords="558,107,658,133"/>
+<area shape="rect" id="node9" href="$menu_8c.html#a4869e17b7a69d6ba971b750fcf35f8ef" title="scan_searchmenu_command" alt="" coords="712,56,904,83"/>
+<area shape="rect" id="node11" href="$menu_8c.html#a6df8b03a625f184c033f4b49f1ab2a25" title="saving_console" alt="" coords="552,157,664,184"/>
+<area shape="rect" id="node10" href="$menu_8c.html#af0b26f286378a1cbec560bfef79475ad" title="searchbyname" alt="" coords="952,81,1059,108"/>
+</map>

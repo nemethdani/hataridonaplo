@@ -1,3 +1,13 @@
+/**
+* @file calendar.h
+* @brief naptárral, eseménnyel, láncolt listákkal kapcsolatos típusok
+*
+*
+*
+*
+*
+*/
+
 #ifndef CALENDAR_H_INCLUDED
 #define CALENDAR_H_INCLUDED
 #include <stdbool.h>
@@ -24,11 +34,20 @@ typedef struct Event{
     char* comment;
 }Event;
 
+/**
+* Ennek a típusnak az elemeiből épül fel a duplán láncolt lista
+* elemei: az esemény(külön típusban), a megelőző és a következő elem
+*
+*/
 typedef struct EventListElement{
     Event *event;
     struct EventListElement *prev, *next;
 }EventListElement;
 
+/**
+* Ez a típus jelképezi a láncolt listát,
+* tartalmazza az első és utolsó elemét
+*/
 typedef struct EventList{
     EventListElement *first;
     EventListElement *last;

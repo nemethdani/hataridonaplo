@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>calendar: calendar.h fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">calendar
+   </div>
+   <div id="projectbrief">prog1 nagyhazi</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Keresés');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('calendar_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Adatszerkezetek</a> &#124;
+<a href="#typedef-members">Típusdefiníciók</a> &#124;
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle">
+<div class="title">calendar.h fájlreferencia</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>naptárral, eseménnyel, láncolt listákkal kapcsolatos típusok  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+A calendar.h definíciós fájl függési gráfja:</div>
+<div class="dyncontent">
+<div class="center"><img src="calendar_8h__incl.png" border="0" usemap="#calendar_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ez az ábra azt mutatja, hogy mely fájlok ágyazzák be közvetve vagy közvetlenül ezt a fájlt:</div>
+<div class="dyncontent">
+<div class="center"><img src="calendar_8h__dep__incl.png" border="0" usemap="#calendar_8hdep" alt=""/></div>
+<map name="calendar_8hdep" id="calendar_8hdep">
+<area shape="rect" id="node2" href="calendar_8c.html" title="a naptár által láncolt listákkal, eseményekkel kapcsolatos függvények " alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="file_8h_source.html" title="file.h" alt="" coords="163,80,213,107"/>
+<area shape="rect" id="node4" href="file_8c.html" title="naptár, események fájlba mentése és beolvasása onnan " alt="" coords="111,155,161,181"/>
+<area shape="rect" id="node5" href="main_8c.html" title="ez a főfájl tölti be az adatokat a fájlból és nyitja meg a főmenüt. " alt="" coords="208,155,269,181"/>
+</map>
+</div>
+</div>
+<p><a href="calendar_8h_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Adatszerkezetek</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_date.html">Date</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_time.html">Time</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_event.html">Event</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_event_list_element.html">EventListElement</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_event_list.html">EventList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Típusdefiníciók</h2></td></tr>
+<tr class="memitem:affc453d30a4a6ce81ed778fd04d2d256"><td class="memItemLeft" align="right" valign="top"><a id="affc453d30a4a6ce81ed778fd04d2d256"></a>
+typedef struct tm&#160;</td><td class="memItemRight" valign="bottom"><b>Tm</b></td></tr>
+<tr class="separator:affc453d30a4a6ce81ed778fd04d2d256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9ee38bb5e4c1674ffc937bb1b783fd"><td class="memItemLeft" align="right" valign="top"><a id="a8b9ee38bb5e4c1674ffc937bb1b783fd"></a>
+typedef struct <a class="el" href="struct_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Date</b></td></tr>
+<tr class="separator:a8b9ee38bb5e4c1674ffc937bb1b783fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb01cbf6c27b503f39613676def571a"><td class="memItemLeft" align="right" valign="top"><a id="a5eb01cbf6c27b503f39613676def571a"></a>
+typedef struct <a class="el" href="struct_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Time</b></td></tr>
+<tr class="separator:a5eb01cbf6c27b503f39613676def571a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607b119a19e65e2c1c7a606f21ab7a46"><td class="memItemLeft" align="right" valign="top"><a id="a607b119a19e65e2c1c7a606f21ab7a46"></a>
+typedef struct <a class="el" href="struct_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Event</b></td></tr>
+<tr class="separator:a607b119a19e65e2c1c7a606f21ab7a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb044d166abbc9224f078ac5ac76dae2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_event_list_element.html">EventListElement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#adb044d166abbc9224f078ac5ac76dae2">EventListElement</a></td></tr>
+<tr class="separator:adb044d166abbc9224f078ac5ac76dae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7faf24c32c52b92939a97982baf9dedf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_event_list.html">EventList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#a7faf24c32c52b92939a97982baf9dedf">EventList</a></td></tr>
+<tr class="separator:a7faf24c32c52b92939a97982baf9dedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a8f7708495c6e39bb6e712218711b331f"><td class="memItemLeft" align="right" valign="top"><a id="a8f7708495c6e39bb6e712218711b331f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>starttime</b> (<a class="el" href="struct_event.html">Event</a> *event)</td></tr>
+<tr class="separator:a8f7708495c6e39bb6e712218711b331f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86526aee5c40a2423b5fc6faa2727b18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_event.html">Event</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#a86526aee5c40a2423b5fc6faa2727b18">createevent</a> (<a class="el" href="struct_date.html">Date</a> date, <a class="el" href="struct_time.html">Time</a> start, <a class="el" href="struct_time.html">Time</a> ends, char *name, char *location, char *comment)</td></tr>
+<tr class="separator:a86526aee5c40a2423b5fc6faa2727b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58188d36dfb58b441455d148b2fbf067"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#a58188d36dfb58b441455d148b2fbf067">deleteEvent</a> (<a class="el" href="struct_event_list_element.html">EventListElement</a> *listelement)</td></tr>
+<tr class="separator:a58188d36dfb58b441455d148b2fbf067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0e2c06c118cc0f8323d92c7b187f0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#a8a0e2c06c118cc0f8323d92c7b187f0c">modifyEvent</a> (<a class="el" href="struct_event_list.html">EventList</a> *eventlist, <a class="el" href="struct_event_list_element.html">EventListElement</a> *listelement, <a class="el" href="struct_date.html">Date</a> date, <a class="el" href="struct_time.html">Time</a> start, <a class="el" href="struct_time.html">Time</a> ends, char *name, char *location, char *comment)</td></tr>
+<tr class="separator:a8a0e2c06c118cc0f8323d92c7b187f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1a85bf49c6e98bcad32d0d26930fd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_event_list.html">EventList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#aae1a85bf49c6e98bcad32d0d26930fd3">initEventList</a> (void)</td></tr>
+<tr class="separator:aae1a85bf49c6e98bcad32d0d26930fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae314263028002a5070e91b2cde392033"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#ae314263028002a5070e91b2cde392033">insertEventToListBackwards</a> (<a class="el" href="struct_event_list.html">EventList</a> *eventlist, <a class="el" href="struct_event.html">Event</a> *event)</td></tr>
+<tr class="separator:ae314263028002a5070e91b2cde392033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53b75eac4624093596b7283b10f5247"><td class="memItemLeft" align="right" valign="top"><a id="ad53b75eac4624093596b7283b10f5247"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>printEventList</b> (<a class="el" href="struct_event_list.html">EventList</a> *eventlist)</td></tr>
+<tr class="separator:ad53b75eac4624093596b7283b10f5247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63187ecfd65b8871ec6097ce46de15e6"><td class="memItemLeft" align="right" valign="top"><a id="a63187ecfd65b8871ec6097ce46de15e6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>freeEvent</b> (<a class="el" href="struct_event_list_element.html">EventListElement</a> *listelement)</td></tr>
+<tr class="separator:a63187ecfd65b8871ec6097ce46de15e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba6c6ae360552d015f30122415413895"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calendar_8h.html#aba6c6ae360552d015f30122415413895">freeEventList</a> (<a class="el" href="struct_event_list.html">EventList</a> *eventlist)</td></tr>
+<tr class="separator:aba6c6ae360552d015f30122415413895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2561d96be1299fd3f5730c6d82143709"><td class="memItemLeft" align="right" valign="top"><a id="a2561d96be1299fd3f5730c6d82143709"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>printevent_short</b> (<a class="el" href="struct_event.html">Event</a> *event)</td></tr>
+<tr class="separator:a2561d96be1299fd3f5730c6d82143709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed32950a6e45d81c94e00c51b864f57"><td class="memItemLeft" align="right" valign="top"><a id="abed32950a6e45d81c94e00c51b864f57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>printevent</b> (<a class="el" href="struct_event.html">Event</a> *event)</td></tr>
+<tr class="separator:abed32950a6e45d81c94e00c51b864f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>naptárral, eseménnyel, láncolt listákkal kapcsolatos típusok </p>
+</div><h2 class="groupheader">Típusdefiníciók dokumentációja</h2>
+<a id="a7faf24c32c52b92939a97982baf9dedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faf24c32c52b92939a97982baf9dedf">&#9670;&nbsp;</a></span>EventList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_event_list.html">EventList</a> <a class="el" href="struct_event_list.html">EventList</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ez a típus jelképezi a láncolt listát, tartalmazza az első és utolsó elemét </p>
+
+</div>
+</div>
+<a id="adb044d166abbc9224f078ac5ac76dae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb044d166abbc9224f078ac5ac76dae2">&#9670;&nbsp;</a></span>EventListElement</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_event_list_element.html">EventListElement</a> <a class="el" href="struct_event_list_element.html">EventListElement</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ennek a típusnak az elemeiből épül fel a duplán láncolt lista elemei: az esemény(külön típusban), a megelőző és a következő elem </p>
+
+</div>
+</div>
+<h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a86526aee5c40a2423b5fc6faa2727b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86526aee5c40a2423b5fc6faa2727b18">&#9670;&nbsp;</a></span>createevent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_event.html">Event</a>* createevent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_time.html">Time</a>&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_time.html">Time</a>&#160;</td>
+          <td class="paramname"><em>ends</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>comment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ez a függvény létrehoz egy eseményt a megadott paraméterek alapján, és egy <a class="el" href="struct_event.html">Event</a> típus-ra mutató pointert ad vissza </p>
+
+</div>
+</div>
+<a id="a58188d36dfb58b441455d148b2fbf067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58188d36dfb58b441455d148b2fbf067">&#9670;&nbsp;</a></span>deleteEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deleteEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_event_list_element.html">EventListElement</a> *&#160;</td>
+          <td class="paramname"><em>listelement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ez a függvény töröl egy eseményt a láncolt listából, és felszabadítja a memóriáját</p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listelement</td><td>A láncolt lista törölni kívánt eseményét tartalmazó listaelemre mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba6c6ae360552d015f30122415413895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba6c6ae360552d015f30122415413895">&#9670;&nbsp;</a></span>freeEventList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool freeEventList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_event_list.html">EventList</a> *&#160;</td>
+          <td class="paramname"><em>eventlist</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Felszabadítja a láncolt listát és annak eseményeit </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventlist</td><td>A lista elejét és végét tartalmazó struktúrára mutató pointer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>false, ha hiba történt, true, ha minden rendben </dd></dl>
+
+</div>
+</div>
+<a id="aae1a85bf49c6e98bcad32d0d26930fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1a85bf49c6e98bcad32d0d26930fd3">&#9670;&nbsp;</a></span>initEventList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_event_list.html">EventList</a>* initEventList </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Duplán láncolt lista létrehozása az eseményeknek, két strázyával </p><dl class="section return"><dt>Visszatérési érték</dt><dd>a listára mutató pointer </dd></dl>
+
+</div>
+</div>
+<a id="ae314263028002a5070e91b2cde392033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae314263028002a5070e91b2cde392033">&#9670;&nbsp;</a></span>insertEventToListBackwards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool insertEventToListBackwards </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_event_list.html">EventList</a> *&#160;</td>
+          <td class="paramname"><em>eventlist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_event.html">Event</a> *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A listába illeszt be egy eseményt hátulról </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventlist</td><td>A lista elejét és végét tartalmazó struktúrára mutató pointer </td></tr>
+    <tr><td class="paramname">listelement</td><td>A láncolt lista törölni kívánt eseményét tartalmazó listaelemre mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>false, ha hiba történt, true, ha minden rendben </dd></dl>
+<p>moving MOGE szurjuk be az uj elemet </p>
+
+</div>
+</div>
+<a id="a8a0e2c06c118cc0f8323d92c7b187f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0e2c06c118cc0f8323d92c7b187f0c">&#9670;&nbsp;</a></span>modifyEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool modifyEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_event_list.html">EventList</a> *&#160;</td>
+          <td class="paramname"><em>eventlist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_event_list_element.html">EventListElement</a> *&#160;</td>
+          <td class="paramname"><em>listelement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_time.html">Time</a>&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_time.html">Time</a>&#160;</td>
+          <td class="paramname"><em>ends</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>comment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Esemény módosítása egy új létrehozásával és a régi törlésével </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventlist</td><td>A lista elejét és végét tartalmazó struktúrára mutató pointer </td></tr>
+    <tr><td class="paramname">listelement</td><td>A láncolt lista törölni kívánt eseményét tartalmazó listaelemre mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+A függvény hívási gráfja:</div>
+<div class="dyncontent">
+<div class="center"><img src="calendar_8h_a8a0e2c06c118cc0f8323d92c7b187f0c_cgraph.png" border="0" usemap="#calendar_8h_a8a0e2c06c118cc0f8323d92c7b187f0c_cgraph" alt=""/></div>
+<map name="calendar_8h_a8a0e2c06c118cc0f8323d92c7b187f0c_cgraph" id="calendar_8h_a8a0e2c06c118cc0f8323d92c7b187f0c_cgraph">
+<area shape="rect" id="node2" href="calendar_8c.html#a86526aee5c40a2423b5fc6faa2727b18" title="createevent" alt="" coords="197,5,288,32"/>
+<area shape="rect" id="node3" href="calendar_8c.html#ae314263028002a5070e91b2cde392033" title="insertEventToListBackwards" alt="" coords="148,56,337,83"/>
+<area shape="rect" id="node4" href="calendar_8c.html#a58188d36dfb58b441455d148b2fbf067" title="deleteEvent" alt="" coords="197,107,288,133"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="calendar_8h.html">calendar.h</a></li>
+    <li class="footer">Projekt: calendar Készült: Wed Nov 7 2018 17:28:48 Készítette: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

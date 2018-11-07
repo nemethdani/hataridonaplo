@@ -1,0 +1,8 @@
+<map id="mainmenu" name="mainmenu">
+<area shape="rect" id="node2" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="167,5,217,32"/>
+<area shape="rect" id="node3" href="$menu_8c.html#acbbd51f1530cbb95ffde2d3fbb001e5a" title="search_menu" alt="" coords="142,107,242,133"/>
+<area shape="rect" id="node4" href="$menu_8c.html#a4869e17b7a69d6ba971b750fcf35f8ef" title="scan_searchmenu_command" alt="" coords="296,56,488,83"/>
+<area shape="rect" id="node6" href="$menu_8c.html#a6df8b03a625f184c033f4b49f1ab2a25" title="saving_console" alt="" coords="136,157,248,184"/>
+<area shape="rect" id="node7" href="$menu_8c.html#abe001aeabe33855a75404555008626ca" title="exit_console" alt="" coords="145,208,239,235"/>
+<area shape="rect" id="node5" href="$menu_8c.html#af0b26f286378a1cbec560bfef79475ad" title="searchbyname" alt="" coords="536,81,643,108"/>
+</map>

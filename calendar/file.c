@@ -1,9 +1,23 @@
+/**
+* @file file.c
+* @brief naptár, események fájlba mentése és beolvasása onnan
+*
+*
+*
+*
+*
+*/
 #include <stdio.h>
 #include "file.h"
 #include "calendar.h"
 #include <time.h>
 
-
+/**
+* Időben növekvő sorrendben fájlba menti az eseményeket
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*
+* @return false, ha hiba történt, true, ha minden rendben
+*/
 bool calendarsave(EventList* eventlist){
     FILE *fp; /* fájl mutató (file pointer/handle) */
 
@@ -38,7 +52,12 @@ bool calendarsave(EventList* eventlist){
     return true;
 }
 
-
+/**
+* A fájlból betölti az eseményeket és egyenként a listába illeszti őket hátulról
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*
+* @return false, ha hiba történt, true, ha minden rendben
+*/
 bool calendarload(EventList* eventlist){
     if(eventlist==NULL) return false;
 

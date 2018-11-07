@@ -4,6 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+* @file file.c
+* @brief A menuk kezelésére szolgáló függvények
+*/
+
+/**
+* Beolvassa a felhasználó által megadott parancs karakterét
+*
+*/
 char scaninput(){
     char input;
     scanf(" %c",&input);
@@ -11,6 +20,11 @@ char scaninput(){
     return input;
 }
 
+
+/**
+* Kiírja a főmenüt, meghívja a megadott parancshoz tartozó függvényt
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
 void mainmenu(EventList* eventlist){
     //enum mmenu{let,ker,men,ki};
     printf("\nMit szeretnel tenni?\n\n");
@@ -46,6 +60,11 @@ void mainmenu(EventList* eventlist){
 void create_console(){
 
 }
+
+/**
+* Itt lehet kiválasztani, hogy hogyan szeretnénk keresni
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
 void search_menu(EventList* eventlist){
        printf("\nHogyan szeretnel keresni?\n");
        printf("(1) (E)semeny neve szerint\n");
@@ -77,6 +96,12 @@ void search_menu(EventList* eventlist){
     }
 }
 
+
+
+/**
+* Megkérdezi, hogy tényleg szertnénk e menteni
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
 void saving_console(EventList* eventlist){
     printf("\ntenyleg el szeretned menteni?\n");
     printf("(1) (M)entes\n");
@@ -97,7 +122,10 @@ void saving_console(EventList* eventlist){
 
     }
 }
-
+/**
+* Kilépés a programból
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
 void exit_console(EventList* eventlist){
     printf("\n(1) Kilepes (m)entessel\n");
     printf("(2) (K)ilepes mentes nelkul\n");
@@ -123,11 +151,19 @@ void exit_console(EventList* eventlist){
 
     }
 }
-
+/**
+* Itt tudjuk módosítani és törölni a kiválasztott eseményt
+* @param editevent A törölni kívánt eseményre mutató pointer
+*/
 void eventeditor(Event* editevent){
     printf("this is the event editor\n");
 }
 
+/**
+* A keresés által visszaadott események listájából az esemény kiválasztása módosítás céljából
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+* @param findlist a keresés által előállított találati lista
+*/
 void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
     char command=scaninput();
     if(command=='f' || command==(i+'0')) mainmenu(eventlist);
@@ -154,7 +190,11 @@ void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
         }
     }
 }
-
+/**
+* Esemény keresése annak neve szerint
+* Az esemény nevéből legalább 3 összefüggő karakter kell
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
 void searchbyname(EventList* eventlist){
     printf("\nIrj be legalabb 3 osszefuggo karaktert az esemeny nevebol!\n");
     char search[128]={0};

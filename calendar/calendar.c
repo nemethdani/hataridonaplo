@@ -1,3 +1,11 @@
+/**
+* @file calendar.c
+* @brief a naptár által láncolt listákkal,
+* eseményekkel kapcsolatos függvények
+*
+* @author Németh Dániel
+*/
+
 #include "calendar.h"
 #include <string.h>
 #include <stdio.h>
@@ -10,7 +18,13 @@ int starttime(Event* event){
 
 
 }
-
+/**
+* Ez a függvény létrehoz egy eseményt a megadott paraméterek alapján,
+*és egy Event típus-ra mutató pointert ad vissza
+*
+*
+*
+*/
 Event* createevent(Date date, Time start, Time ends, char* name, char* location, char* comment){
     Event *event=(Event*) malloc(sizeof(Event));
     if(event==NULL) return NULL;
@@ -39,7 +53,14 @@ Event* createevent(Date date, Time start, Time ends, char* name, char* location,
     event->comment=newcomment;
     return event;
 }
-
+/**
+* Ez a függvény töröl egy eseményt a láncolt listából,
+*és felszabadítja a memóriáját
+*
+* @param listelement A láncolt lista törölni kívánt eseményét
+*tartalmazó listaelemre mutató pointer
+*
+*/
 bool deleteEvent(EventListElement* listelement){
     if(listelement==NULL || listelement->event==NULL) return false;
     if(freeEvent(listelement)==false){
@@ -51,7 +72,14 @@ bool deleteEvent(EventListElement* listelement){
     free(listelement);
     return true;
 }
-
+/**
+* Esemény módosítása egy új létrehozásával
+*és a régi törlésével
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+* @param listelement A láncolt lista törölni kívánt eseményét
+*tartalmazó listaelemre mutató pointer
+*
+*/
 bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, Time start, Time ends, char* name, char* location, char* comment ){
     Event* newevent=createevent(date, start, ends, name, location, comment);
     if(newevent==NULL) return false;
@@ -85,7 +113,13 @@ void printevent_short(Event* event){
              event->name,
              event->location);
 }
-
+/**
+*Duplán láncolt lista létrehozása az eseményeknek,
+*két strázyával
+*@return a listára mutató pointer
+*
+*
+*/
 EventList* initEventList(void){
     EventList* eventlist=(EventList*) malloc(sizeof(EventList));
     EventListElement* sentinel1=(EventListElement*) malloc(sizeof(EventListElement));
@@ -96,14 +130,20 @@ EventList* initEventList(void){
     eventlist->last->prev=eventlist->first;
     return eventlist;
     }
-
+/**
+* A listába illeszt be egy eseményt hátulról
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+* @param listelement A láncolt lista törölni kívánt eseményét
+*        tartalmazó listaelemre mutató pointer
+* @return false, ha hiba történt, true, ha minden rendben
+*/
 bool insertEventToListBackwards(EventList* eventlist,Event* event){
     if(eventlist==NULL) return false;
     EventListElement* element=(EventListElement*) malloc(sizeof(EventListElement));
     if (element==NULL) return false;
     element->event=event;
 
-    //moving MOGE szurunk be
+    ///moving MOGE szurjuk be az uj elemet
     EventListElement* moving;
     moving=eventlist->last->prev;
     while(moving!=eventlist->first &&  (starttime(moving->event) > starttime(event))){
@@ -138,7 +178,12 @@ bool freeEvent(EventListElement* listelement){
     free(listelement->event);
     return true;
 }
-
+/**
+* Felszabadítja a láncolt listát és annak eseményeit
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*
+* @return false, ha hiba történt, true, ha minden rendben
+*/
 bool freeEventList(EventList* eventlist){
     EventListElement* list=eventlist->first;
     while(list){

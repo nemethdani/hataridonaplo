@@ -1,0 +1,24 @@
+warning: The selected output language "hungarian" has not been updated
+since release 1.4.6.  As a result some sentences may appear in English.
+
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c:17: warning: multiple use of section label 'Ami' while adding section, (first occurrence: /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c, line 7)
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c:134: warning: argument 'listelement' of command @param is not found in the argument list of insertEventToListBackwards(EventList *eventlist, Event *event)
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c:140: warning: The following parameters of insertEventToListBackwards(EventList *eventlist, Event *event) are not documented:
+  parameter 'event'
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c:83: warning: The following parameters of modifyEvent(EventList *eventlist, EventListElement *listelement, Date date, Time start, Time ends, char *name, char *location, char *comment) are not documented:
+  parameter 'date'
+  parameter 'start'
+  parameter 'ends'
+  parameter 'name'
+  parameter 'location'
+  parameter 'comment'
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c:134: warning: argument 'listelement' of command @param is not found in the argument list of insertEventToListBackwards(EventList *eventlist, Event *event)
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.h:61: warning: The following parameters of insertEventToListBackwards(EventList *eventlist, Event *event) are not documented:
+  parameter 'event'
+/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.h:59: warning: The following parameters of modifyEvent(EventList *eventlist, EventListElement *listelement, Date date, Time start, Time ends, char *name, char *location, char *comment) are not documented:
+  parameter 'date'
+  parameter 'start'
+  parameter 'ends'
+  parameter 'name'
+  parameter 'location'
+  parameter 'comment'

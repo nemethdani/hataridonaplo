@@ -1,8 +1,42 @@
+/*! \mainpage Határidőnapló
+ *
+ * \section intro_sec Introduction
+ *
+ * BME prog1 házi
+ *
+ * \section Ami már működik (UI)
+ * Naptár betöltése fájlból, kiírása fájlba
+ *
+ * Esemény keresése név szerint
+ *
+ * Program bezárása
+ *
+ * háttérben: eseméynek beszűrása, törlése, módosítása, kiírása
+ *
+ *
+ * \section Ami nem működik
+ * Események keresése idő szerint
+ *
+ * Események módosítása
+ */
+
+/**
+* @file main.c
+* @brief ez a főfájl tölti be az adatokat a fájlból
+* és nyitja meg a főmenüt.
+*
+* @author Németh Dániel
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "calendar.h"
 #include "file.h"
 
+/**
+ *ez a főfüggvény tölti be az adatokat a fájlból
+* és nyitja meg a főmenüt.
+ */
 int main()
 {
     Date date={date.year=2018,date.month=10,date.day=26};

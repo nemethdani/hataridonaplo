@@ -1,0 +1,17 @@
+<map id="saving_console" name="saving_console">
+<area shape="rect" id="node2" href="$menu_8c.html#a033e355dbab3723c9d57e8f3e6fe52e1" title="scaninput" alt="" coords="853,195,932,221"/>
+<area shape="rect" id="node3" href="$file_8h.html#a894fe0f62442d90fb5a74f2087f78207" title="calendarsave" alt="" coords="459,43,557,69"/>
+<area shape="rect" id="node4" href="$menu_8c.html#a2acfd1808f80da28d18e7e124c8f0304" title="mainmenu" alt="" coords="165,144,248,171"/>
+<area shape="rect" id="node5" href="$menu_8c.html#a49018986eb46fdc439f45ac1335f002b" title="create_console" alt="" coords="296,144,407,171"/>
+<area shape="rect" id="node6" href="$menu_8c.html#acbbd51f1530cbb95ffde2d3fbb001e5a" title="search_menu" alt="" coords="301,245,401,272"/>
+<area shape="rect" id="node14" href="$menu_8c.html#abe001aeabe33855a75404555008626ca" title="exit_console" alt="" coords="304,93,399,120"/>
+<area shape="rect" id="node7" href="$menu_8c.html#af0b26f286378a1cbec560bfef79475ad" title="searchbyname" alt="" coords="455,347,561,373"/>
+<area shape="rect" id="node8" href="$calendar_8h.html#aae1a85bf49c6e98bcad32d0d26930fd3" title="initEventList" alt="" coords="658,347,753,373"/>
+<area shape="rect" id="node9" href="$calendar_8h.html#a2561d96be1299fd3f5730c6d82143709" title="printevent_short" alt="" coords="648,296,763,323"/>
+<area shape="rect" id="node10" href="$calendar_8h.html#ae314263028002a5070e91b2cde392033" title="insertEventToListBackwards" alt="" coords="611,397,800,424"/>
+<area shape="rect" id="node12" href="$menu_8c.html#a4869e17b7a69d6ba971b750fcf35f8ef" title="scan_searchmenu_command" alt="" coords="609,448,801,475"/>
+<area shape="rect" id="node11" href="$calendar_8c.html#a8f7708495c6e39bb6e712218711b331f" title="starttime" alt="" coords="856,397,929,424"/>
+<area shape="rect" id="node13" href="$menu_8c.html#a6b851ba201d34cf1b2a1fbc64ca6806f" title="eventeditor" alt="" coords="849,448,936,475"/>
+<area shape="rect" id="node15" href="$calendar_8h.html#aba6c6ae360552d015f30122415413895" title="freeEventList" alt="" coords="459,144,557,171"/>
+<area shape="rect" id="node16" href="$calendar_8c.html#a63187ecfd65b8871ec6097ce46de15e6" title="freeEvent" alt="" coords="666,144,745,171"/>
+</map>
