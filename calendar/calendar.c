@@ -105,7 +105,7 @@ void printevent(Event* event){
 }
 
 void printevent_short(Event* event){
-    printf("%d %d %d %d %s %s\n",
+    printf("%.2d.%.2d %.2d:%.2d %s %s\n",
              event->start.tm_mon,
              event->start.tm_mday,
              event->start.tm_hour,
