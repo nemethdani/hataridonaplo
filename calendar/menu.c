@@ -9,6 +9,10 @@
 * @brief A menuk kezelésére szolgáló függvények
 */
 
+
+typedef enum {month,week,day}Bytime;
+
+
 /**
 * Beolvassa a felhasználó által megadott parancs karakterét
 *
@@ -79,15 +83,15 @@ void search_menu(EventList* eventlist){
         break;
     case '2':
     case 'n':
-        //searchbyday();
+        searchbytime(day);
         break;
     case '3':
     case 'h':
-        //searchbyweek();
+        searchbytime(week);
         break;
     case '4':
     case 'o':
-        //searchbymonth();
+        searchbytime(month);
         break;
     case '5':
     case 'v':
@@ -228,3 +232,13 @@ void searchbyname(EventList* eventlist){
     scan_searchmenu_command(i,eventlist,findlist);
     return;
 }
+/***
+* Megkeresi az eseményt hónap, hét vagy nap alapján
+* Bekéri a felhasználótól a keresett időt
+* Az aktuális év adott idejében keres
+* @param time lehetséges ésrtékek: month, week, day; ezek állítják be, hogy mi szerint keres a függvény
+*/
+void searchbytime(Bytime time){
+    printf("%d\n",time);
+}
+
