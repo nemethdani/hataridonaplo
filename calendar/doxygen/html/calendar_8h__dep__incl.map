@@ -1,6 +1,0 @@
-<map id="calendar.h" name="calendar.h">
-<area shape="rect" id="node2" href="$calendar_8c.html" title="a naptár által láncolt listákkal, eseményekkel kapcsolatos függvények " alt="" coords="5,80,88,107"/>
-<area shape="rect" id="node3" href="$file_8h_source.html" title="file.h" alt="" coords="163,80,213,107"/>
-<area shape="rect" id="node4" href="$file_8c.html" title="naptár, események fájlba mentése és beolvasása onnan " alt="" coords="111,155,161,181"/>
-<area shape="rect" id="node5" href="$main_8c.html" title="ez a főfájl tölti be az adatokat a fájlból és nyitja meg a főmenüt. " alt="" coords="208,155,269,181"/>
-</map>

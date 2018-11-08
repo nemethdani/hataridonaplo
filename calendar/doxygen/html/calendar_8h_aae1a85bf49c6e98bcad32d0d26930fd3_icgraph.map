@@ -1,9 +1,0 @@
-<map id="initEventList" name="initEventList">
-<area shape="rect" id="node2" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="652,5,703,32"/>
-<area shape="rect" id="node3" href="$menu_8c.html#af0b26f286378a1cbec560bfef79475ad" title="searchbyname" alt="" coords="148,56,255,83"/>
-<area shape="rect" id="node4" href="$menu_8c.html#acbbd51f1530cbb95ffde2d3fbb001e5a" title="search_menu" alt="" coords="303,56,403,83"/>
-<area shape="rect" id="node5" href="$menu_8c.html#a2acfd1808f80da28d18e7e124c8f0304" title="mainmenu" alt="" coords="451,56,533,83"/>
-<area shape="rect" id="node8" href="$menu_8c.html#a4869e17b7a69d6ba971b750fcf35f8ef" title="scan_searchmenu_command" alt="" coords="581,157,773,184"/>
-<area shape="rect" id="node6" href="$menu_8c.html#a6df8b03a625f184c033f4b49f1ab2a25" title="saving_console" alt="" coords="621,56,733,83"/>
-<area shape="rect" id="node7" href="$menu_8c.html#abe001aeabe33855a75404555008626ca" title="exit_console" alt="" coords="630,107,725,133"/>
-</map>
