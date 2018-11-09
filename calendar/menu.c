@@ -84,15 +84,15 @@ void search_menu(EventList* eventlist){
         break;
     case '2':
     case 'n':
-        searchbytime(day);
+        searchbytime(day,eventlist);
         break;
     case '3':
     case 'h':
-        searchbytime(week);
+        searchbytime(week,eventlist);
         break;
     case '4':
     case 'o':
-        searchbytime(month);
+        searchbytime(month,eventlist);
         break;
     case '5':
     case 'v':
@@ -195,6 +195,9 @@ void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
         }
     }
 }
+
+
+
 /**
 * Esemény keresése annak neve szerint
 * Az esemény nevéből legalább 3 összefüggő karakter kell
@@ -241,39 +244,64 @@ void searchbyname(EventList* eventlist){
 * Ha hétre k
 * @param time lehetséges ésrtékek: month, week, day; ezek állítják be, hogy mi szerint keres a függvény
 */
-void searchbytime(Bytime bytime){
-  time_t rawtime;
-  Tm * timeinfo;
+void searchbytime(Bytime bytime, EventList* eventlist){
+    int sweek;
+    time_t rawtime;
+    Tm * timeinfo;
 
-  time ( &rawtime );
-  timeinfo = localtime ( &rawtime );
-//  timeinfo->tm_hour=0;
-//  timeinfo->tm_min=0;
-//  timeinfo->tm_sec=0;
+    time(&rawtime);
+    timeinfo=localtime(&rawtime);
 
 
-  switch(bytime){
-    month:
-        printf("Hanyadik ho?\n");
-        scanf("%d",timeinfo->tm_mon);
-        searchbymonth(timeinfo);
-        break;
-    week:
-        int week;
-        printf("Hanyadik het?\n");
-        scanf("%d",&week);
-        searchbyweek(week,timeinfo);
-        break;
-    day:
-        printf("Hanyadik ho?\n");
-        scanf("%d",timeinfo->tm_mon);
-        printf("Hanyadik nap?\n");
-        scanf("%d",timeinfo->tm_mday);
-        scanbyday(timeinfo);
-        break;
-  }
-searchbymonth(Tm timeinfo){}
+    switch(bytime){
+    case month:
+            printf("Hanyadik ho?\n");
+            scanf("%d",&timeinfo->tm_mon);
+            searchbymonth(timeinfo,eventlist);
+            break;
+    case week:
+
+            printf("Hanyadik het?\n");
+            scanf("%d",&sweek);
+            searchbyweek(sweek,timeinfo);
+            break;
+    case day:
+            printf("Hanyadik ho?\n");
+            scanf("%d",timeinfo->tm_mon);
+            printf("Hanyadik nap?\n");
+            scanf("%d",timeinfo->tm_mday);
+            //scanbyday(timeinfo);
+            break;
+    }
+}
+searchbymonth(Tm* timeinfo,EventList* eventlist){
+    EventListElement* moving=eventlist->first->next;
+    int i=1;
+    Event* e;
+    EventList* findlist=initEventList();
+    while(moving!=eventlist->last){
+
+        if(moving->event->start.tm_mon==timeinfo->tm_mon){
+            e=moving->event;
+            printf("(%d) ",i);
+            printevent_short(e);
+            printf("\n");
+            //put event to new linkedlist
+            if(insertEventToListBackwards(findlist,e)==false) printf("nem illesztette be a talalati listaba\n");
+            ++i;
+
+        }
+        moving=moving->next;
+
+    }
+    //print extra menu
+    printf("(%d) (K)ereses menu\n",i);
+    i++;
+    printf("(%d) (F)omenu\n",i);
+    scan_searchmenu_command(i,eventlist,findlist);
+}
+
 searchbyweek(int week, Tm timeinfo){}
 searchbyday(Tm timeinfo){}
-}
+
 

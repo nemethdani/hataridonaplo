@@ -9,7 +9,7 @@
 	<stdbool.h>
 	<time.h>
 
-1541609118 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
+1541672779 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
 	"calendar.h"
 	<string.h>
 	<stdio.h>
@@ -27,7 +27,7 @@
 	<stdbool.h>
 	"calendar.h"
 
-1541671058 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
+1541753692 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
 	<stdio.h>
 	<ctype.h>
 	"calendar.h"
