@@ -27,10 +27,11 @@
 	<stdbool.h>
 	"calendar.h"
 
-1541670492 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
+1541671058 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
 	<stdio.h>
 	<ctype.h>
 	"calendar.h"
 	<stdlib.h>
 	<string.h>
+	<time.h>
 

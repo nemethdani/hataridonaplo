@@ -3,6 +3,7 @@
 #include "calendar.h"
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 /**
 * @file file.c
@@ -235,10 +236,44 @@ void searchbyname(EventList* eventlist){
 /***
 * Megkeresi az eseményt hónap, hét vagy nap alapján
 * Bekéri a felhasználótól a keresett időt
-* Az aktuális év adott idejében keres
+* Mindig az aktuális évben keres, ha hónapra vagy hétre keresünk
+* Mindig az aktuális hónapban keres, ha napra keresünk
+* Ha hétre k
 * @param time lehetséges ésrtékek: month, week, day; ezek állítják be, hogy mi szerint keres a függvény
 */
-void searchbytime(Bytime time){
-    printf("%d\n",time);
+void searchbytime(Bytime bytime){
+  time_t rawtime;
+  Tm * timeinfo;
+
+  time ( &rawtime );
+  timeinfo = localtime ( &rawtime );
+//  timeinfo->tm_hour=0;
+//  timeinfo->tm_min=0;
+//  timeinfo->tm_sec=0;
+
+
+  switch(bytime){
+    month:
+        printf("Hanyadik ho?\n");
+        scanf("%d",timeinfo->tm_mon);
+        searchbymonth(timeinfo);
+        break;
+    week:
+        int week;
+        printf("Hanyadik het?\n");
+        scanf("%d",&week);
+        searchbyweek(week,timeinfo);
+        break;
+    day:
+        printf("Hanyadik ho?\n");
+        scanf("%d",timeinfo->tm_mon);
+        printf("Hanyadik nap?\n");
+        scanf("%d",timeinfo->tm_mday);
+        scanbyday(timeinfo);
+        break;
+  }
+searchbymonth(Tm timeinfo){}
+searchbyweek(int week, Tm timeinfo){}
+searchbyday(Tm timeinfo){}
 }
 
