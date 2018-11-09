@@ -303,6 +303,8 @@ searchbymonth(Tm* timeinfo,EventList* eventlist){
 
 searchbyweek(int week, Tm timeinfo){
 
+
+
 }
 searchbyday(Tm* timeinfo,EventList* eventlist){
     EventListElement* moving=eventlist->first->next;
@@ -336,23 +338,15 @@ searchbyday(Tm* timeinfo,EventList* eventlist){
 *Kiszámítja a megadott dátum az év hányadik hetében van
 *Az év első hete az, amelyik tartalmazza jan. 4-ét
 *A hét hétfővel kezdődik
+*ISO 8601
 */
-//int date2week(Tm* date){
-//    //első hét hétfője
-//    ////jan 4. napja
-//    Tm jan4=date;
-//    jan4.tm_mon=0;
-//    jan4.tm_mday=4;
-//    time_t t =mktime(&jan4);
-//    //0-6, 1:hetfo
-//    int dayofweek=localtime(&t)->tm_wday;
-//    Tm firstday=jan4;
-//    firstday.tm_mday=firstday.tm_mday;
-//    return 1;
+int date2week(Tm* date){
+
+    char buffer [2];
 
 
-    ////-
-    //adott dátum év hányadik napja
-    //hányszor 7?
-//}
+    strftime (buffer,80,"%V",date);
+    return (buffer[0]-'0')*10 + (buffer[1]-'0');
+
+}
 
