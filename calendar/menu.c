@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <stdbool.h>
+
+//#include "debugmalloc.h"
 
 /**
 * @file file.c
@@ -42,7 +45,7 @@ void mainmenu(EventList* eventlist){
     switch(scaninput()){
         case '1':
         case 'l':
-            create_console();
+            create_console(eventlist);
             break;
         case '2':
         case 'k':
@@ -62,7 +65,84 @@ void mainmenu(EventList* eventlist){
     }
 }
 
-void create_console(){
+
+char *hosszu_sort_olvas() {
+    int db = 0;
+    char *sor = (char*) malloc(sizeof(char) * 1);
+    sor[0] = '\0';
+    char ujkar;
+    while (scanf("%c", &ujkar) == 1 && ujkar != '\n') {
+        /* itt a tömb nyújtása */
+        char *ujtomb = (char*) malloc(sizeof(char) * (db+1+1));
+        for (int i = 0; i < db; ++i)
+            ujtomb[i] = sor[i];
+        free(sor);
+        sor = ujtomb;
+        ujtomb[db] = ujkar;
+        ujtomb[db+1] = '\0';
+        ++db;
+    }
+
+    return sor;
+}
+
+void scandate(Date* date){
+    printf("Mi az esemeny datuma? (eeee.hh.dd)\n");
+    scanf("%d.%d.%d",&date->year,&date->month,&date->day);
+//    if(scanf("%d.%d.%d",&date->year,&date->month,&date->day)!=3 ||
+//       date->month>12 ||
+//       date->month<1 ||
+//       date->day>31 ||
+//       date->day<1){
+//           printf("probald ujra\n");
+//           scandate(date);
+//       }
+
+    return;
+}
+void scantime(Time* time){
+    scanf("%d:%d",&time->hour,&time->minute);
+//    if(scanf("%d:%d",time->hour,time->minute)!=2){
+//        printf("probald ujra\n");
+//        scantime(time);
+//
+//    }
+    return;
+}
+/**
+* Bekéri az esemény adatait és létrehozza az eseményt
+*/
+void create_console(EventList* eventlist){
+    //Date date, Time start, Time ends, char* name, char* location, char* comment
+    Date date;
+    Time start, ends;
+
+
+    scandate(&date);
+
+    printf("Kerem az esemeny kezdo idejet! (oo:pp)\n");
+    scantime(&start);
+    printf("Kerem az esemeny befejezo idejet! (oo:pp)\n");
+    scantime(&ends);
+    getchar();
+
+    printf("Kerem a nevet\n");
+    char* name=hosszu_sort_olvas();
+    //getchar();
+    printf("Kerem a helyszint\n");
+    char* loc=hosszu_sort_olvas();
+    //getchar();
+    printf("Kerem a megjegyzést\n");
+    char* comm=hosszu_sort_olvas();
+    //getchar();
+    printf("%s %s %s",name,loc,comm);
+    Event* e=createevent(date,start,ends,name,loc,comm);
+
+    //printf("e: %d", e!=NULL);
+    //printf("eventlist: %d", eventlist!=NULL);
+
+    if(insertEventToListBackwards(eventlist,e)==false) printf("nem sikerult az esemenyt beilleszteni\n");
+    eventeditor(e);
 
 }
 
@@ -263,7 +343,7 @@ void searchbytime(Bytime bytime, EventList* eventlist){
 
             printf("Hanyadik het?\n");
             scanf("%d",&sweek);
-            searchbyweek(sweek,timeinfo);
+            searchbyweek(sweek,timeinfo,eventlist);
             break;
     case day:
             printf("Hanyadik ho?\n");
@@ -301,8 +381,32 @@ searchbymonth(Tm* timeinfo,EventList* eventlist){
     scan_searchmenu_command(i,eventlist,findlist);
 }
 
-searchbyweek(int week, Tm timeinfo){
+searchbyweek(int week, Tm timeinfo, EventList* eventlist){
+    EventListElement* moving=eventlist->first->next;
+    int i=1;
+    Event* e;
+    EventList* findlist=initEventList();
+    while(moving!=eventlist->last){
 
+        if(moving->event->start.tm_mon==timeinfo.tm_mon &&
+           moving->event->start.tm_mday==timeinfo.tm_mday){
+            e=moving->event;
+            printf("(%d) ",i);
+            printevent_short(e);
+            printf("\n");
+            //put event to new linkedlist
+            if(insertEventToListBackwards(findlist,e)==false) printf("nem illesztette be a talalati listaba\n");
+            ++i;
+
+        }
+        moving=moving->next;
+
+    }
+    //print extra menu
+    printf("(%d) (K)ereses menu\n",i);
+    i++;
+    printf("(%d) (F)omenu\n",i);
+    scan_searchmenu_command(i,eventlist,findlist);
 
 
 }
@@ -339,6 +443,7 @@ searchbyday(Tm* timeinfo,EventList* eventlist){
 *Az év első hete az, amelyik tartalmazza jan. 4-ét
 *A hét hétfővel kezdődik
 *ISO 8601
+*@return 1-53
 */
 int date2week(Tm* date){
 

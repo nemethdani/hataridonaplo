@@ -33,6 +33,8 @@
 #include "calendar.h"
 #include "file.h"
 
+//#include "debugmalloc.h"
+
 /**
  *ez a főfüggvény tölti be az adatokat a fájlból
 * és nyitja meg a főmenüt.

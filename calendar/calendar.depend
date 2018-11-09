@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1541608820 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c
+1541795631 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/main.c
 	<stdio.h>
 	<stdlib.h>
 	"calendar.h"
@@ -9,7 +9,7 @@
 	<stdbool.h>
 	<time.h>
 
-1541672779 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
+1541795631 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/calendar.c
 	"calendar.h"
 	<string.h>
 	<stdio.h>
@@ -17,7 +17,7 @@
 	<time.h>
 	<stdlib.h>
 
-1541608649 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.c
+1541795631 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/file.c
 	<stdio.h>
 	"file.h"
 	"calendar.h"
@@ -27,11 +27,26 @@
 	<stdbool.h>
 	"calendar.h"
 
-1541753692 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
+1541795631 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/menu.c
 	<stdio.h>
 	<ctype.h>
 	"calendar.h"
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	<stdbool.h>
+
+1541794801 /home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/debugmalloc.h
+	<stdlib.h>
+	<stdbool.h>
+
+1541794795 source:/home/dani/Documents/egyetem/prog1/nagyhazi/hataridonaplo/calendar/debugmalloc.c
+	<stdbool.h>
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	<time.h>
+	<stdarg.h>
+	"debugmalloc.h"
 

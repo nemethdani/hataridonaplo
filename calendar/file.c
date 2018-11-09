@@ -12,6 +12,8 @@
 #include "calendar.h"
 #include <time.h>
 
+//#include "debugmalloc.h"
+
 /**
 * Időben növekvő sorrendben fájlba menti az eseményeket
 * @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer

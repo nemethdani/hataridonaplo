@@ -13,6 +13,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+//#include "debugmalloc.h"
+
 int starttime(Event* event){
     return mktime(&(event->start));
 
