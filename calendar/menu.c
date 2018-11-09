@@ -267,10 +267,10 @@ void searchbytime(Bytime bytime, EventList* eventlist){
             break;
     case day:
             printf("Hanyadik ho?\n");
-            scanf("%d",timeinfo->tm_mon);
+            scanf("%d",&timeinfo->tm_mon);
             printf("Hanyadik nap?\n");
-            scanf("%d",timeinfo->tm_mday);
-            //scanbyday(timeinfo);
+            scanf("%d",&timeinfo->tm_mday);
+            searchbyday(timeinfo,eventlist);
             break;
     }
 }
@@ -301,7 +301,58 @@ searchbymonth(Tm* timeinfo,EventList* eventlist){
     scan_searchmenu_command(i,eventlist,findlist);
 }
 
-searchbyweek(int week, Tm timeinfo){}
-searchbyday(Tm timeinfo){}
+searchbyweek(int week, Tm timeinfo){
 
+}
+searchbyday(Tm* timeinfo,EventList* eventlist){
+    EventListElement* moving=eventlist->first->next;
+    int i=1;
+    Event* e;
+    EventList* findlist=initEventList();
+    while(moving!=eventlist->last){
+
+        if(moving->event->start.tm_mon==timeinfo->tm_mon &&
+           moving->event->start.tm_mday==timeinfo->tm_mday){
+            e=moving->event;
+            printf("(%d) ",i);
+            printevent_short(e);
+            printf("\n");
+            //put event to new linkedlist
+            if(insertEventToListBackwards(findlist,e)==false) printf("nem illesztette be a talalati listaba\n");
+            ++i;
+
+        }
+        moving=moving->next;
+
+    }
+    //print extra menu
+    printf("(%d) (K)ereses menu\n",i);
+    i++;
+    printf("(%d) (F)omenu\n",i);
+    scan_searchmenu_command(i,eventlist,findlist);
+}
+
+/**
+*Kiszámítja a megadott dátum az év hányadik hetében van
+*Az év első hete az, amelyik tartalmazza jan. 4-ét
+*A hét hétfővel kezdődik
+*/
+//int date2week(Tm* date){
+//    //első hét hétfője
+//    ////jan 4. napja
+//    Tm jan4=date;
+//    jan4.tm_mon=0;
+//    jan4.tm_mday=4;
+//    time_t t =mktime(&jan4);
+//    //0-6, 1:hetfo
+//    int dayofweek=localtime(&t)->tm_wday;
+//    Tm firstday=jan4;
+//    firstday.tm_mday=firstday.tm_mday;
+//    return 1;
+
+
+    ////-
+    //adott dátum év hányadik napja
+    //hányszor 7?
+//}
 
