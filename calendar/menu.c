@@ -14,7 +14,7 @@
 */
 
 
-typedef enum {month,week,day}Bytime;
+typedef enum {month,week,day,no,name}Bytime;
 
 
 /**
@@ -142,7 +142,7 @@ void create_console(EventList* eventlist){
     //printf("eventlist: %d", eventlist!=NULL);
 
     if(insertEventToListBackwards(eventlist,e)==false) printf("nem sikerult az esemenyt beilleszteni\n");
-    eventeditor(e);
+    eventeditor(e,eventlist,searchelement(e,eventlist),no,NULL,0,NULL);
 
 }
 
@@ -240,8 +240,54 @@ void exit_console(EventList* eventlist){
 * Itt tudjuk módosítani és törölni a kiválasztott eseményt
 * @param editevent A törölni kívánt eseményre mutató pointer
 */
-void eventeditor(Event* editevent){
-    printf("this is the event editor\n");
+void eventeditor(Event* editevent, EventList* eventlist, EventListElement* listelement, Bytime bytime,Tm* timeinfo,int sweek,char* search){
+    printevent(editevent);
+    printf("\n(7) (M)odositasok fajlba mentese\n");
+    printf("(8) (E)semeny torlese\n");
+    if(bytime!=no) printf("(9) (V)issza a talalati listahoz\n");
+    printf("(A) (U)j esemeny\n");
+    printf("(B) Vissza a (f)omenube\n");
+
+    switch(scaninput()){
+    case '7':
+    case 'm':
+        calendarsave(eventlist);
+        printf("mentettem\n");
+        eventeditor(editevent, eventlist, listelement, bytime,timeinfo,sweek,search);
+        break;
+    case '8':
+    case 'e':
+        printf("%s",deleteEvent(listelement) ? "torolve\n" : "nem sikerult totolni\n");
+        break;
+    case '9':
+    case 'v':
+        //searchbymonth(Tm* timeinfo,EventList* eventlist)
+        //searchbytime(bytime, EventList* eventlist)
+        switch(bytime){
+        case month:
+                searchbymonth(timeinfo,eventlist);
+                break;
+        case week:
+                searchbyweek(sweek,timeinfo,eventlist);
+                break;
+        case day:
+                searchbyday(timeinfo,eventlist);
+                break;
+        case name:
+                searchbyname_iter(eventlist,search);
+                break;
+        deafult: break;
+        }
+    case 'a':
+    case 'u':
+        create_console(eventlist);
+        break;
+    case 'b':
+    case 'f':
+        mainmenu(eventlist);
+        break;
+    }
+
 }
 
 /**
@@ -249,19 +295,19 @@ void eventeditor(Event* editevent){
 * @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
 * @param findlist a keresés által előállított találati lista
 */
-void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
+void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist, Bytime bytime, Tm* timeinfo, int sweek, char* search){
     char command=scaninput();
     if(command=='f' || command==(i+'0')) mainmenu(eventlist);
     else if(command=='k' || command==(i-1+'0')) search_menu(eventlist);
     else if(isalpha(command)){
         printf("irj be mast\n");
-        scan_searchmenu_command(i,eventlist,findlist);
+        scan_searchmenu_command(i,eventlist,findlist,bytime,timeinfo,sweek,search);
     }
     else{
         int comm=command - '0';
         if(comm>i) {
             printf("irj be mast\n");
-            scan_searchmenu_command(i,eventlist,findlist);
+            scan_searchmenu_command(i,eventlist,findlist,bytime,timeinfo,sweek,search);
         }
         else{
             EventListElement* editelement=findlist->first->next;
@@ -271,32 +317,19 @@ void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist){
                 iter++;
             }
             Event* editevent=editelement->event;
-            eventeditor(editevent);
+            eventeditor(editevent,eventlist,searchelement(editevent,eventlist),bytime,timeinfo,sweek,search);
         }
     }
 }
 
-
-
-/**
-* Esemény keresése annak neve szerint
-* Az esemény nevéből legalább 3 összefüggő karakter kell
-* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
-*/
-void searchbyname(EventList* eventlist){
-    printf("\nIrj be legalabb 3 osszefuggo karaktert az esemeny nevebol!\n");
-    char search[128]={0};
-    while(strlen(&search)<3){
-            printf("legalabb 3 karaktert irjal\n");
-            scanf("%s",search);
-    }
+void searchbyname_iter(EventList* eventlist,char* search){
     EventListElement* moving=eventlist->first->next;
     int i=1;
     Event* e;
     EventList* findlist=initEventList();
     while(moving!=eventlist->last){
 
-        if(strstr(moving->event->name,&search)!=NULL){
+        if(strstr(moving->event->name,search)!=NULL){
             e=moving->event;
             printf("(%d) ",i);
             printevent_short(e);
@@ -313,8 +346,24 @@ void searchbyname(EventList* eventlist){
     printf("(%d) (K)ereses menu\n",i);
     i++;
     printf("(%d) (F)omenu\n",i);
-    scan_searchmenu_command(i,eventlist,findlist);
+    scan_searchmenu_command(i,eventlist,findlist,name,NULL,0,search);
     return;
+}
+
+/**
+* Esemény keresése annak neve szerint
+* Az esemény nevéből legalább 3 összefüggő karakter kell
+* @param eventlist A lista elejét és végét tartalmazó struktúrára mutató pointer
+*/
+void searchbyname(EventList* eventlist){
+    printf("\nIrj be legalabb 3 osszefuggo karaktert az esemeny nevebol!\n");
+    char search[128]={0};
+    while(strlen(&search)<3){
+            printf("legalabb 3 karaktert irjal\n");
+            scanf("%s",search);
+    }
+    searchbyname_iter(eventlist,&search);
+
 }
 /***
 * Megkeresi az eseményt hónap, hét vagy nap alapján
@@ -378,18 +427,17 @@ searchbymonth(Tm* timeinfo,EventList* eventlist){
     printf("(%d) (K)ereses menu\n",i);
     i++;
     printf("(%d) (F)omenu\n",i);
-    scan_searchmenu_command(i,eventlist,findlist);
+    scan_searchmenu_command(i,eventlist,findlist,month,timeinfo,0,NULL);
 }
 
-searchbyweek(int week, Tm timeinfo, EventList* eventlist){
+searchbyweek(int sweek, Tm timeinfo, EventList* eventlist){
     EventListElement* moving=eventlist->first->next;
     int i=1;
     Event* e;
     EventList* findlist=initEventList();
     while(moving!=eventlist->last){
 
-        if(moving->event->start.tm_mon==timeinfo.tm_mon &&
-           moving->event->start.tm_mday==timeinfo.tm_mday){
+        if(date2week(moving->event->start)==sweek){
             e=moving->event;
             printf("(%d) ",i);
             printevent_short(e);
@@ -406,7 +454,7 @@ searchbyweek(int week, Tm timeinfo, EventList* eventlist){
     printf("(%d) (K)ereses menu\n",i);
     i++;
     printf("(%d) (F)omenu\n",i);
-    scan_searchmenu_command(i,eventlist,findlist);
+    scan_searchmenu_command(i,eventlist,findlist,week,NULL,sweek,NULL);
 
 
 }
@@ -435,7 +483,7 @@ searchbyday(Tm* timeinfo,EventList* eventlist){
     printf("(%d) (K)ereses menu\n",i);
     i++;
     printf("(%d) (F)omenu\n",i);
-    scan_searchmenu_command(i,eventlist,findlist);
+    scan_searchmenu_command(i,eventlist,findlist,day,timeinfo,0,NULL);
 }
 
 /**

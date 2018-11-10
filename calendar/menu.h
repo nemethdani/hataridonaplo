@@ -7,5 +7,6 @@ void search_menu();
 void exit_console();
 void saving_console(EventList* eventlist);
 char scaninput();
+void eventeditor(Event* editevent, EventList* eventlist, EventListElement* listelement, Bytime bytime,Tm* timeinfo,int sweek)
 
 #endif // MENU_H_INCLUDED

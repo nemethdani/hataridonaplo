@@ -92,8 +92,15 @@ bool modifyEvent(EventList* eventlist, EventListElement* listelement,Date date, 
 
 }
 
+
+EventListElement* searchelement(Event* event,EventList* eventlist){
+    EventListElement* element=eventlist->first->next;
+    while((element->event != event) && element->next!=NULL ) element=element->next;
+    return element;
+}
+
 void printevent(Event* event){
-    printf("%d %d %d %d %d %d %d %s %s %s\n",
+    printf("\n(1) datum: %d.%d.%d\n(2) kezdoido: %d:%d\n(3) vége: %d:%d\n(4) nev: %s\n(5) Hely: %s\n(6) Megjegyzes:%s\n",
              event->start.tm_year,
              event->start.tm_mon,
              event->start.tm_mday,
