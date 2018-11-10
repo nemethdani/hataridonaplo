@@ -257,7 +257,7 @@ void eventeditor(Event* editevent, EventList* eventlist, EventListElement* liste
         break;
     case '8':
     case 'e':
-        printf("%s",deleteEvent(listelement) ? "torolve\n" : "nem sikerult totolni\n");
+        deleteEvent(listelement);
         break;
     case '9':
     case 'v':
@@ -317,7 +317,7 @@ void scan_searchmenu_command(int i, EventList* eventlist, EventList* findlist, B
                 iter++;
             }
             Event* editevent=editelement->event;
-            eventeditor(editevent,eventlist,searchelement(editevent,eventlist),bytime,timeinfo,sweek,search);
+            eventeditor(editevent,eventlist,editelement,bytime,timeinfo,sweek,search);
         }
     }
 }

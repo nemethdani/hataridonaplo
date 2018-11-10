@@ -2,19 +2,72 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="menu.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="file.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="127" topLine="0" />
+			<Cursor1 position="180" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="16" />
+			<Collapse line="22" />
+			<Collapse line="26" />
+			<Collapse line="35" />
+			<Collapse line="56" />
+			<Collapse line="62" />
+			<Collapse line="68" />
+			<Collapse line="83" />
+		</Folding>
+	</File>
+	<File name="debugmalloc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="657" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="file.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="91" topLine="0" />
+			<Cursor1 position="653" topLine="0" />
 		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="22" />
+			<Collapse line="37" />
+			<Collapse line="42" />
+		</Folding>
 	</File>
 	<File name="debugmalloc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="calendar.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3630" topLine="33" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+			<Collapse line="17" />
+			<Collapse line="22" />
+			<Collapse line="29" />
+			<Collapse line="57" />
+			<Collapse line="76" />
+			<Collapse line="84" />
+			<Collapse line="101" />
+			<Collapse line="125" />
+			<Collapse line="132" />
+			<Collapse line="142" />
+			<Collapse line="149" />
+			<Collapse line="158" />
+			<Collapse line="170" />
+			<Collapse line="175" />
+			<Collapse line="182" />
+			<Collapse line="190" />
+			<Collapse line="196" />
+			<Collapse line="198" />
+		</Folding>
+	</File>
+	<File name="file.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="91" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="calendar.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -31,47 +84,14 @@
 			<Collapse line="50" />
 		</Folding>
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menu.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="653" topLine="0" />
+			<Cursor1 position="127" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="0" />
-			<Collapse line="22" />
-			<Collapse line="37" />
-			<Collapse line="42" />
-		</Folding>
 	</File>
-	<File name="calendar.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menu.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1962" topLine="9" />
-		</Cursor>
-		<Folding>
-			<Collapse line="0" />
-			<Collapse line="17" />
-			<Collapse line="22" />
-			<Collapse line="29" />
-			<Collapse line="57" />
-			<Collapse line="76" />
-			<Collapse line="84" />
-			<Collapse line="101" />
-			<Collapse line="115" />
-			<Collapse line="124" />
-			<Collapse line="131" />
-			<Collapse line="141" />
-			<Collapse line="148" />
-			<Collapse line="157" />
-			<Collapse line="169" />
-			<Collapse line="174" />
-			<Collapse line="181" />
-			<Collapse line="189" />
-			<Collapse line="195" />
-			<Collapse line="197" />
-		</Folding>
-	</File>
-	<File name="menu.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8473" topLine="90" />
+			<Cursor1 position="8755" topLine="48" />
 		</Cursor>
 		<Folding>
 			<Collapse line="10" />
@@ -96,34 +116,17 @@
 			<Collapse line="213" />
 			<Collapse line="218" />
 			<Collapse line="238" />
+			<Collapse line="242" />
+			<Collapse line="297" />
 			<Collapse line="324" />
+			<Collapse line="329" />
+			<Collapse line="331" />
 			<Collapse line="357" />
 			<Collapse line="375" />
 			<Collapse line="405" />
 			<Collapse line="432" />
 			<Collapse line="460" />
 			<Collapse line="495" />
-		</Folding>
-	</File>
-	<File name="debugmalloc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="657" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="file.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="180" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="0" />
-			<Collapse line="16" />
-			<Collapse line="22" />
-			<Collapse line="26" />
-			<Collapse line="35" />
-			<Collapse line="56" />
-			<Collapse line="62" />
-			<Collapse line="68" />
-			<Collapse line="83" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
